@@ -1,13 +1,13 @@
-FROM --platform=linux/arm64 node:20-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm i
+RUN npm install
 
 COPY . .
 
 EXPOSE 80
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
